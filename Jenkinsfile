@@ -1,8 +1,6 @@
 pipeline{
     agent any
-    environment{
-        PATH= "/usr/share/maven/bin:$PATH"
-    }
+        }
     stages{
         stage('Git Checkout.'){
             steps{
@@ -12,6 +10,7 @@ pipeline{
         stage('Maven Build.'){
             steps{
             sh "maven clean package"    
+            exec('/usr/local/bin/node /usr/local/lib/node_modules/uglifycss/uglifycss in.css > out.css');    
                 
             }
         }
