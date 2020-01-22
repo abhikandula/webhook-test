@@ -8,7 +8,7 @@ pipeline{
             checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'github', url: 'https://github.com/abhikandula/webhook-test.git']]])    
             }
         }
-        stage('Maven Build'){
+        stage('Maven Build.'){
             steps{
             sh "maven clean package"    
                 
